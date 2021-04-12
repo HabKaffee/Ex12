@@ -22,7 +22,7 @@ void DoorTimerAdapter::Timeout() {
 }
 
 TimedDoor::TimedDoor(int timeout) : iTimeout(timeout), opened(false),
-                            adapter(new DoorTimerAdapter(*this)) {};
+                            adapter(new DoorTimerAdapter(*this)) {}
 
 void TimedDoor::lock() {
     this->opened = false;
@@ -31,7 +31,6 @@ void TimedDoor::lock() {
 void TimedDoor::unlock() {
     this->opened = true;
     this->adapter->Timeout();
-
 }
 
 bool TimedDoor::isDoorOpened() {
@@ -46,7 +45,7 @@ void TimedDoor::DoorTimeOut() {
 }
 
 void TimedDoor::throwState() {
-    if(this->opened) {
+    if (this->opened) {
         throw static_cast<std::string>("the door is opened");
     }
     if (!(this->opened)) {

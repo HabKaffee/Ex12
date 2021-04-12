@@ -14,21 +14,21 @@ class Door;
 class TimedDoor;
 
 class TimerClient {
-public:
+ public:
     virtual void Timeout() = 0;
 };
 
 class Door {
-public:
+ public:
     virtual void lock() = 0;
     virtual void unlock() = 0;
     virtual bool isDoorOpened() = 0;
 };
 
 class DoorTimerAdapter : public TimerClient {
-private:
+ private:
     TimedDoor& door;
-public:
+ public:
     explicit DoorTimerAdapter(TimedDoor &door);
     void Timeout() override;
 };
@@ -51,8 +51,7 @@ public:
 class Timer {
     TimerClient *client;
     void sleep(int);
-public:
+ public:
     void tregister(int, TimerClient*);
 };
-
 #endif  // INCLUDE_TIMEDDOOR_H_
