@@ -34,11 +34,11 @@ class DoorTimerAdapter : public TimerClient {
 };
 
 class TimedDoor : public Door {
-private:
+ private:
     DoorTimerAdapter * adapter;
     int iTimeout;
     bool opened;
-public:
+ public:
     explicit TimedDoor(int timeout);
     bool isDoorOpened() override;
     void unlock() override;
