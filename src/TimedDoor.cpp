@@ -50,7 +50,7 @@ void TimedDoor::throwState() {
         throw static_cast<std::string>("the door is opened");
     }
     if (!(this->opened)) {
-        throw static_cast<std::string>("the door is closed");
+        throw static_cast<std::string>("the door is closed!");
     }
 }
 
