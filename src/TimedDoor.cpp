@@ -42,15 +42,15 @@ bool TimedDoor::isDoorOpened() {
 }
 
 void TimedDoor::DoorTimeOut() {
-    throw ("close the door!");
+    throw static_cast<std::string>("close the door!");
 }
 
 void TimedDoor::throwState() {
     if(this->opened) {
-        throw ("the door is opened");
+        throw static_cast<std::string>("the door is opened");
     }
     if (!(this->opened)) {
-        throw ("the door is closed");
+        throw static_cast<std::string>("the door is closed");
     }
 }
 
