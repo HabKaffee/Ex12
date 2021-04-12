@@ -3,7 +3,7 @@
 #include "TimedDoor.h"
 
 void Timer::sleep(int sleepFor) {
-    //std::this_thread::sleep_for(std::chrono::milliseconds(sleepFor*1000));
+    //  std::this_thread::sleep_for(std::chrono::milliseconds(sleepFor*1000));
     time_t start = time(nullptr);
     while (time(nullptr) - start < sleepFor) {
         continue;
